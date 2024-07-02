@@ -2,7 +2,7 @@
 
 **Author: [Rishabh Jain]**
 
-Welcome to the repository for learning materials on Generative AI. This repository covers various topics aimed at understanding and implementing advanced generative techniques.This repository is compiled from various sources intended for learning Genrative Ai for beginners like me.
+Welcome to the repository for learning materials on Generative AI. This repository covers various topics aimed at understanding and implementing advanced generative techniques.This repository is compiled from various sources intended for learning Generative Ai for beginners like me.
 *I'll try to constantly update the repository with the new things i learn during the journey*
 
 #### Topics Explored
