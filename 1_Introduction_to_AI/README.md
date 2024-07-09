@@ -1,6 +1,6 @@
 **Preface**
 
-Generative models have become widely popular in recent years. If you’re reading this book, you’ve probably interacted with a generative model at some point. Maybe you’ve used ChatGPT to generate text, used style transfer in apps like Instagram, or seen the deepfake videos that have been making headlines. These are all examples of generative models in action!
+Generative models have become widely popular in recent years. If you’re reading this file, you’ve probably interacted with a generative model at some point. Maybe you’ve used ChatGPT to generate text, used style transfer in apps like Instagram, or seen the deepfake videos that have been making headlines. These are all examples of generative models in action!
 
 **Introduction**
 What exactly is generative modeling? The high-level idea is to provide data to a model to train it so afterward it can generate new data that looks similar to the training data. For example, if I train a model on a dataset of images of cats, I can then use that model to generate new images of cats that look like they could have come from the original dataset. This is a powerful idea, and it has a wide range of applications, from creating novel images and videos to generating text with a specific style.
@@ -10,7 +10,13 @@ What exactly is generative modeling? The high-level idea is to provide data to a
  In this chapter, we will start by generating our first image using a generative model.
  diffusers is a popular library that provides access to state-of-the-art diffusion models. It’s a powerful, simple toolbox that allows us to quickly load and train diffusion models!
  We’ll use Stable Diffusion version 1.5, a diffusion model capable of generating high-quality images! If you browse the model website, you can read the model card, an essential document for discoverability and reproducibility. There, you can read about the model, how it was trained, intended use cases, and more.
- Given we have a model (Stable Diffusion) and a tool to use the model (diffusers), we can now generate our first image! When we load models, we’ll need to send them to a specific hardware device, such as CPU (cpu), GPU (cuda or cuda:0), or Mac hardware called Metal (mps). The following code will frequently appear in the book: it assigns a variable to cuda:0 if a GPU is available; otherwise, it will use a CPU.
+ Given we have a model (Stable Diffusion) and a tool to use the model (diffusers), we can now generate our first image! When we load models, we’ll need to send them to a specific hardware device, such as CPU (cpu), GPU (cuda or cuda:0), or Mac hardware called Metal (mps). The following code will frequently appear in the repo: it assigns a variable to cuda:0 if a GPU is available;otherwise, it will use a CPU.
+ ```bash
+ import torch
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
+```
  we’ll load Stable Diffusion 1.5. diffusers offers a convenient, high-level wrapper called StableDiffusionPipeline, which is ideal for this use case. Don’t worry about all the parameters for now - the highlights are:
 
 - There are many models with the Stable Diffusion architecture, so we need to specify the one we want to use, [runwayml/stable-diffusion-v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5), in this case.
