@@ -3,6 +3,8 @@
 Generative models have become widely popular in recent years. If you’re reading this file, you’ve probably interacted with a generative model at some point. Maybe you’ve used ChatGPT to generate text, used style transfer in apps like Instagram, or seen the deepfake videos that have been making headlines. These are all examples of generative models in action!
 
 **Introduction**
+
+
 What exactly is generative modeling? The high-level idea is to provide data to a model to train it so afterward it can generate new data that looks similar to the training data. For example, if I train a model on a dataset of images of cats, I can then use that model to generate new images of cats that look like they could have come from the original dataset. This is a powerful idea, and it has a wide range of applications, from creating novel images and videos to generating text with a specific style.
 
 **Generating First Image**
@@ -27,6 +29,8 @@ Play with the prompt and generate new images.
 You will notice that the generations could improve.
 
 **Generating Our first text**
+
+
 Just as diffusers is a very convenient library for diffusion models, the popular transformers library is extremely useful for running transformers-based models and adapting to new use cases. It provides a standardized interface for a wide range of tasks, such as generating text, detecting objects in images, and transcribing an audio file into text.
 
 The transformers library provides different layers of abstractions. For example, if you don’t care about all the internals, the easiest is to use pipeline, which abstracts all the processing required to get a prediction. We can instantiate a pipeline by calling the pipeline() function and specifying which task we want to solve, such as text-classification.
@@ -50,6 +54,8 @@ While generative models offer remarkable capabilities, their widespread adoption
 - Regulation: Given the potential risks associated with generative models, there is a growing call for regulatory oversight and accountability mechanisms to ensure responsible development and development. 
 
 **How Are Generative AI Models Created? Big Budgets and Open Source**
+
+
 Several of the most impressive generative models we’ve seen in the past couple of years were created by influential research labs in big, private companies. OpenAI developed ChatGPT, DALL·E, and Sora; Google built Imagen, Bard, and Gemini; and Meta created Llama and Code Llama.
 
 In some cases, code and model weights are released as well: these are usually called open-source releases because those are the essential artifacts necessary to run the model on your hardware. Frequently, however, they are kept hidden for strategic reasons.
@@ -59,4 +65,6 @@ Big models, even when hidden, serve as inspiration for the community, whose work
 This cycle can only work because some of the models are open-sourced and can be used by the community. Companies that release open-source models don’t do it for altruistic reasons but because they see economic value in this strategy. By providing code and models that are adopted by the community, they receive public scrutiny with bug fixes, new ideas, derived model architectures, or even new datasets that work well with the models released.
 
 **So we can replicate Open Source AI Right?**
+
+
 At this point, we’d like to clarify that model releases are rarely truly open-source. Unlike in the software world, source code is not enough to fully understand a machine learning system. Model weights are not enough either: they are just the final output of the model training process. Being able to exactly replicate an existing model would require the source code used to train the model (not just the modeling code or the inference code), the training regime and parameters, and, crucially, all the data used for training. None of these, and particularly the data, are usually released.
